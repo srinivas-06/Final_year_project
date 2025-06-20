@@ -1,0 +1,110 @@
+       /* General Page Styling */
+       body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        /*background: linear-gradient(to bottom, #eef2f3, #cfd9df); */
+        background-image:url('/static/images/img.jpg');
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+        color: #333;
+        text-align: center;
+    }
+    
+    /* Navigation Bar */
+    header.hero {
+        background-image: linear-gradient(to right, rgb(0, 0, 0) , rgb(46, 46, 46));
+        color: white;
+        padding: 20px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    header .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links li {
+        margin-left: 20px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .nav-links a:hover {
+        background-color: rgb(43, 100, 255);
+        transform: scale(1.1);
+    }
+    
+    /* Result Section */
+    main {
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.849);
+        border-radius: 15px;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        color:rgb(232, 235, 238);
+        margin-bottom: 20px;
+    }
+    
+    /* Table Styling */
+    .result-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    
+    .result-table th, .result-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    .result-table th {
+        background-color: #007bff;
+        color: white;
+    }
+    
+    .result-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    /* Download Button */
+    .btn {
+        padding: 10px 20px;
+        background: linear-gradient(to right, #007bff,rgb(132, 181, 247));
+        color: white;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 20px;
+    }
+    
+    .btn:hover {
+        background: linear-gradient(to right, #007bff,rgb(132, 181, 247));
+        transform: scale(1.05);
+    }
+    

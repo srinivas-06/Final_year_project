@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/about.css">
+
+    <title>About</title>
+
+<!-- 
+    
+
+<style>
+    /* General styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+            }
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+    
+        }
+    
+    
+    /* Hero section */
+    .hero {
+        background-color: rgb(8, 81, 141);
+        background-image: linear-gradient(to right, rgb(0, 19, 61) , rgb(4, 61, 126));
+        padding-top: 20px;
+        color: white;
+    }
+    
+    /* Navigation bar */
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 20px 0;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        margin-left:60px;
+    }
+    
+    .nav-links li {
+        margin-left: 20px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: rgb(250, 250, 250);
+        font-size: 1rem;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .nav-links a:hover, .nav-links .active {
+        background-color:rgb(12, 16, 255);
+    }
+</style>
+-->
+
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="logo">
+                <h1>About</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/predict">Predict</a></li>
+                    <li><a href="/result">Result</a></li>
+                    <li><a href="/report">Report</a></li>
+                    <li><a href="/logout">Log out</a></li>
+                   
+                </ul>
+            </nav>
+        </div>
+    </header>   
+
+    <main>
+
+        <div class="topic_1">
+            <h4>DIABETES PREDICTION USING MACHINE LEARNING :</h4>
+            <div class="topic_1_para">
+                <p>Diabetes is usually classified into 2- type 1 and type 2. Diabetes mellitus, which is Type 2 diabetes, is a chronic condition posing significant challenges to global healthcare systems. The increasing prevalence of this disease demands innovative approaches for early detection and effective management. Recent advancements in artificial intelligence and machine learning techniques offer promising solutions for predicting diabetes. Utilizing extensive datasets, including essential health indicators such as blood pressure, body mass index (BMI), and glucose levels, machine learning models can identify patterns and risk factors associated with diabetes.</p>
+                <img src="/static/images/about_img1.jpeg" alt="img1" style="width:100%;height:550px;border-radius:10px"/>
+                
+                <p>In this context, various machine learning algorithms, including decision trees, random forests, support vector machines (SVM), and neural networks, have been employed to develop robust classifiers for diabetes prediction. Notably, algorithms such as logistic regression, Naive Bayes, and k-nearest neighbors (KNN) have shown significant potential in the prediction of type 1 or type 2 diabetes in prediabetic patients.</p>
+                <p>The deployment of these models in real-world healthcare settings can facilitate early diagnosis and intervention, potentially reducing the burden of diabetes-related complications. This article delves into the methodologies, data analysis, and evaluation metrics of different machine-learning approaches for diabetes prediction, highlighting their implications in clinical practice and public health. Through systematic review and performance analysis, we aim to provide a comprehensive overview of the current landscape for early detection of diabetes and future directions in using machine learning for diabetes prediction models.</p>
+            </div>
+        </div>
+
+
+        <div class="topic_2">
+            <h4>WHAT IS DIABETES PREDICTION USING MACHINE LEARNING ?</h4>
+            <div class="topic_2_para">
+                <P>Diabetes prediction using machine learning means using computer programs to guess if someone might get diabetes. These programs look at things like health history and lifestyle to make their guess. They learn from many examples of people with and without diabetes to make better guesses. For instance, they might look at how much sugar someone eats or if they exercise regularly. By doing this, they can give early warnings to people at risk of getting diabetes so they can take better care of themselves.</p>
+                <img src="/static/images/about_img2.webp" alt="img1" style="width:400px;height:350px;border-radius:10px"/>
+            </div>
+        </div>
+
+        <div class="topic_3">
+            <h4>DETAILS ABOUT DATASET :</h4>
+            <div class="topic_3_para">
+                <p>The datasets consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.</p>
+                
+                
+                <ul>
+                    <li><b>Pregnancies:</b> Number of times pregnant</li>
+                    <li><b>Glucose:</b> Plasma glucose concentration a 2 hours in an oral glucose tolerance test</li>
+                    <li><b>BloodPressure:</b> Diastolic blood pressure (mm Hg)</li>
+                    <li><b>SkinThickness:</b> Triceps skin fold thickness (mm)</li>
+                    <li><b>Insulin:</b> 2-Hour serum insulin (mu U/ml)</li>
+                    <li><b>BMI:</b> Body mass index (weight in kg/(height in m)^2)</li>
+                    <li><b>DiabetesPedigreeFunction:</b> Diabetes pedigree function</li>
+                    <li><b>Age:</b> Age (years)</li>
+                </ul>
+                <p>The target variable is <b> ‘Outcome’’</b> which indicates whether the patient had diabetes (1) or not (0). This training dataset is particularly useful for testing machine learning algorithms for binary classification tasks.</p>
+            </div>
+        </div>
+
+        <div class="topic_4">
+            <h4>METHODS FOR DIABETES PREDICTION USED IN THE PROJECT :</h4>
+            <ol>
+                <li>Decision Tree</li>
+                <li>Support Vector Machine(SVM)</li>
+            </ol>
+
+        </div>
+    </main>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>

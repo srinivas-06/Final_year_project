@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Result</title>
+    <link rel="stylesheet" href="/static/result.css">
+
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>Diabetes Prediction Result</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/predict">Predict</a></li>
+                    <li><a href="/result">Result</a></li>
+                    <li><a href="/report">Report</a></li>
+                    <li><a href="/logout">Log out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Patient Information</h2>
+        <p><strong>Patient ID:</strong> {{ patient_Id }}</p>
+        <p><strong>Patient Name:</strong> {{ p_name }}</p>
+        <p><strong>Patient Email-ID:</strong> {{ email }}</p>
+
+        <h2>Prediction Details</h2>
+        <table class="result-table">
+            <tr>
+                <th>Feature</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Pregnancies</td>
+                <td>{{ Pregnancies }}</td>
+            </tr>
+            <tr>
+                <td>Glucose</td>
+                <td>{{ Glucose }}</td>
+            </tr>
+            <tr>
+                <td>Blood Pressure</td>
+                <td>{{ BloodPressure }}</td>
+            </tr>
+            <tr>
+                <td>Skin Thickness</td>
+                <td>{{ SkinThickness }}</td>
+            </tr>
+            <tr>
+                <td>Insulin</td>
+                <td>{{ Insulin }}</td>
+            </tr>
+            <tr>
+                <td>BMI</td>
+                <td>{{ BMI }}</td>
+            </tr>
+            <tr>
+                <td>Diabetes Pedigree Function</td>
+                <td>{{ DiabetesPedigreeFunction }}</td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>{{ Age }}</td>
+            </tr>
+            <tr>
+                <td><strong>Prediction Result</strong></td>
+                <td><strong>{{ result }}</strong></td>
+            </tr>
+        </table>
+        
+        {% if result == 'Diabetic' %}
+            <h3>Recommended Diabetes Management</h3>
+            <p>Here are some steps to manage diabetes effectively:</p>
+            <ul>
+                <li>Maintain a healthy diet with low sugar and high fiber.</li>
+                <li>Exercise regularly to control blood sugar levels.</li>
+                <li>Monitor blood glucose levels frequently.</li>
+                <li>Consult a doctor for medication and insulin therapy.</li>
+                <li>Reduce stress and practice relaxation techniques.</li>
+            </ul>
+        {% else %}
+            <h3>General Health Advice</h3>
+            <p>To maintain good health, follow these tips:</p>
+            <ul>
+                <li>Eat a balanced diet with plenty of fruits and vegetables.</li>
+                <li>Stay physically active and maintain a healthy weight.</li>
+                <li>Drink plenty of water and avoid sugary beverages.</li>
+                <li>Get regular check-ups to monitor your health.</li>
+                <li>Ensure adequate sleep and manage stress effectively.</li>
+            </ul>
+        {% endif %}
+        
+        <button class="btn" onclick="downloadReport({{ patient_Id }})">Download Report</button>
+        
+    </main>
+
+    <script>
+        function downloadReport(patientId) {
+            window.location.href = `/download/${patientId}`;
+        }
+    </script>
+</body>
+</html>

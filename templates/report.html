@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/report.css">
+    <title>Report</title>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="logo">
+                <h1>Diabetes Report</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/predict">Predict</a></li>
+                    <li><a href="/result">Result</a></li>
+                    <li><a href="/report">Report</a></li>
+                    <li><a href="/logout">Log out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container_1">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by Patient ID or Name...">
+            <button class="btn" onclick="searchData()">Search</button>
+        </div>
+
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Patient Name</th>
+                    <th>Pregnancies</th>
+                    <th>Glucose</th>
+                    <th>Blood Pressure</th>
+                    <th>Skin Thickness</th>
+                    <th>Insulin</th>
+                    <th>BMI</th>
+                    <th>Diabetes Pedigree Function</th>
+                    <th>Age</th>
+                    <th>Result</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prediction in predictions %}
+                <tr>
+                    <td>{{ prediction.patient_Id }}</td>
+                    <td>{{ prediction.p_name }}</td>
+                    <td>{{ prediction.Pregnancies }}</td>
+                    <td>{{ prediction.Glucose }}</td>
+                    <td>{{ prediction.BloodPressure }}</td>
+                    <td>{{ prediction.SkinThickness }}</td>
+                    <td>{{ prediction.Insulin }}</td>
+                    <td>{{ prediction.BMI }}</td>
+                    <td>{{ prediction.DiabetesPedigreeFunction }}</td>
+                    <td>{{ prediction.Age }}</td>
+                    <td>{{ prediction.result }}</td>
+                    <td>
+                        <button class="btn" onclick="downloadReport({{ prediction.patient_Id }})">Download</button><br/>
+                        <button class="btn" onclick="deleteRecord({{ prediction.patient_Id }})">Delete</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        
+        function searchData() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let table = document.getElementById("dataTable");
+            let rows = table.getElementsByTagName("tr");
+        
+            for (let i = 1; i < rows.length; i++) { // Skip table header
+                let cells = rows[i].getElementsByTagName("td");
+                let matchFound = false;
+        
+                for (let j = 0; j < cells.length - 1; j++) { // Ignore last column (buttons)
+                    let cellText = cells[j].textContent.toLowerCase();
+                    if (cellText.includes(input)) {
+                        matchFound = true;
+                        break;
+                    }
+                }
+        
+                if (matchFound) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+        
+        
+
+
+
+
+
+
+        function downloadReport(patientId) {
+            if (!patientId || isNaN(patientId)) {
+                alert("Invalid patient ID");
+                return;
+            }
+            window.location.href = `/download/${parseInt(patientId)}`;
+        }
+        
+        function deleteRecord(patientId) {
+            if (!patientId || isNaN(patientId)) {
+                alert("Invalid patient ID");
+                return;
+            }
+            if (confirm("Are you sure you want to delete this record?")) {
+                window.location.href = `/delete/${parseInt(patientId)}`;
+            }
+        }
+        
+    </script>
+</body>
+</html>

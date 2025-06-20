@@ -1,0 +1,1 @@
+SELECT * FROM prediction_data.predictions;

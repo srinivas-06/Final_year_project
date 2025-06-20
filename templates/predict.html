@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/predict.css">
+    <title>Predict</title>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="logo">
+                <h1>PREDICTION</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/home" >Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/predict">Predict</a></li>
+                    <li><a href="/result">Result</a></li>
+                    <li><a href="/report">Report</a></li>
+                    <li><a href="/logout">Log out</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="login">
+        <h1>Diabetes Prediction</h1>
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <input type="text" name="patient_Id" placeholder="Patient ID" required="required" /><br>
+            <input type="text" name="p_name" placeholder="Patient Name" required="required" /> <br>
+            <input type="email" name="email" placeholder="Email" required="required" /> <br>
+            <input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" /><br>
+            <input type="text" name="Glucose" placeholder="Glucose" required="required" /><br>
+            <input type="text" name="BloodPressure" placeholder="BloodPressure" required="required" /><br>
+            <input type="text" name="SkinThickness" placeholder="SkinThickness" required="required" /><br>
+            <input type="text" name="Insulin" placeholder="Insulin" required="required" /><br>
+            <input type="text" name="BMI" placeholder="BMI" required="required" /><br>
+            <input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required" /><br>
+            <input type="text" name="Age" placeholder="Age" required="required" /><br>
+    
+    
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    </main>
+
+    {{result}}
+</body>
+</html>
